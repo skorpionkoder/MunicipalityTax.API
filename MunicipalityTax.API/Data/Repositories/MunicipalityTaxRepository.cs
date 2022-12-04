@@ -31,6 +31,26 @@ namespace MunicipalityTax.API.Data.Repositories
             return await municipalityTax.ToListAsync();
         }
 
+        public async Task<ICollection<Entities.MunicipalityTax>> GetMunicipalityTaxesAsync(int municipalityId)
+        {
+            _logger.LogInformation($"Getting Municipality Taxes for ID {municipalityId}.");
+
+            var municipalityTax = _context.MunicipalityTax
+                .Where(m => m.MunicipalityId == municipalityId);
+
+            return await municipalityTax.ToListAsync();
+        }
+
+        public async Task<Entities.MunicipalityTax> GetMunicipalityTaxAsync(int municipalityTaxId)
+        {
+            _logger.LogInformation($"Getting Municipality Taxe for ID {municipalityTaxId}.");
+
+            var municipalityTax = _context.MunicipalityTax
+                .Where(m => m.MunicipalityTaxId == municipalityTaxId);
+
+            return await municipalityTax.FirstOrDefaultAsync();
+        }
+
         public async Task<bool> SaveChangesAsync()
         {
             _logger.LogInformation($"Attempting to save the changes in the context");

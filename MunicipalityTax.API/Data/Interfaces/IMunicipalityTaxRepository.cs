@@ -8,5 +8,7 @@
 
         // Municipality Taxes
         Task<ICollection<Entities.MunicipalityTax>> GetMunicipalityTaxesAsync(int municipalityId, DateTime taxDate);
+        Task<ICollection<Entities.MunicipalityTax>> GetMunicipalityTaxesAsync(int municipalityId);
+        Task<Entities.MunicipalityTax> GetMunicipalityTaxAsync(int municipalityTaxId);
     }
 }
