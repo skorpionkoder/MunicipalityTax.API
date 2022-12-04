@@ -2,7 +2,7 @@
 
 Buying & Owning Real Estate Nordic
 
-.NET Core 6 application which manages taxes applied in different municipalities. The taxes are valid for a period of time.
+.NET Core 6 WebAPI which manages taxes applied in different municipalities. The taxes are valid for a period of time.
 
 Example: Municipality Copenhagen has its taxes scheduled like this:
 - yearly tax = 0.2 (for period 2020.01.01-2020.12.31),
@@ -22,10 +22,8 @@ Result - 0.4
 Full requirements for the application -
 - MS SQL database where municipality taxes are stored
 - Taxes have ability to be scheduled (yearly, monthly ,weekly ,daily) for each municipality
-- Application has the ability to insert new records for municipality taxes (one record at a time)
+- API has the ability to insert new records for municipality taxes (one record at a time)
 - User can ask for a specific municipality tax by entering municipality name and date
-- Application have unit or integration tests
-Application has no visible user interface, requests are given directly to application as a service (producer service).
-
-- Application is dockerized
+- API has unit or integration tests
+- API is dockerized
 - Update record functionality is exposed via API
