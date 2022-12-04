@@ -11,29 +11,21 @@ Example: Municipality Copenhagen has its taxes scheduled like this:
 - and it has two daily taxes scheduled = 0.1 (at days 2020.01.01 and 2020.12.25).
 
 The result according to provided example would be:
-Municipality (Input)
-Date (Input)
-Result
-Copenhagen
-2020.01.01
-0.1
-Copenhagen
-2020.05.02
-0.4
-Copenhagen
-2020.07.10
-0.2
-Copenhagen
-2020.03.16
-0.2
+Municipality (Input) - Copenhagen
+Date (Input) - 2020.01.01
+Result - 0.1
+
+Municipality (Input) - Copenhagen
+Date (Input) - 2020.05.02
+Result - 0.4
 
 Full requirements for the application -
- MS SQL database where municipality taxes are stored
- Taxes have ability to be scheduled (yearly, monthly ,weekly ,daily) for each municipality
- Application has the ability to insert new records for municipality taxes (one record at a time)
- User can ask for a specific municipality tax by entering municipality name and date
- Application have unit or integration tests
+- MS SQL database where municipality taxes are stored
+- Taxes have ability to be scheduled (yearly, monthly ,weekly ,daily) for each municipality
+- Application has the ability to insert new records for municipality taxes (one record at a time)
+- User can ask for a specific municipality tax by entering municipality name and date
+- Application have unit or integration tests
 Application has no visible user interface, requests are given directly to application as a service (producer service).
 
- Application is dockerized
- Update record functionality is exposed via API
+- Application is dockerized
+- Update record functionality is exposed via API
