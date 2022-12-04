@@ -16,6 +16,12 @@ namespace MunicipalityTax.API.Data.Repositories
             _logger = logger;
         }
 
+        public void Add<T>(T entity) where T : class
+        {
+            _logger.LogInformation($"Adding an object of type {entity.GetType()} to the context.");
+            _context.Add(entity);
+        }
+
         public async Task<Municipality> GetMunicipalityAsync(string municipalityname)
         {
             _logger.LogInformation($"Getting Municipality ID for {municipalityname}.");
@@ -24,6 +30,12 @@ namespace MunicipalityTax.API.Data.Repositories
                 .Where(m => m.Name == municipalityname);
 
             return await municipality.FirstOrDefaultAsync();
+        }
+
+        public async Task<bool> SaveChangesAsync()
+        {
+            _logger.LogInformation($"Attempting to save the changes in the context");
+            return (await _context.SaveChangesAsync()) > 0;
         }
     }
 }
